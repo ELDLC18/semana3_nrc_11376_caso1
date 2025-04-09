@@ -30,6 +30,7 @@ public class V1 extends JFrame implements ActionListener {
 	private JButton btnSumarReales;
 	private JScrollPane scrollPane;
 	private JTextArea txtS;
+	private JButton btnNewButton_1;
 
 	/**
 	 * Launch the application.
@@ -65,29 +66,29 @@ public class V1 extends JFrame implements ActionListener {
 		}
 		{
 			lblSegundoNmero = new JLabel("Segundo número:");
-			lblSegundoNmero.setBounds(10, 45, 96, 14);
+			lblSegundoNmero.setBounds(10, 25, 96, 14);
 			contentPane.add(lblSegundoNmero);
 		}
 		{
 			lblTercerNmero = new JLabel("Tercer número:");
-			lblTercerNmero.setBounds(10, 79, 96, 14);
+			lblTercerNmero.setBounds(10, 50, 96, 14);
 			contentPane.add(lblTercerNmero);
 		}
 		{
 			txtN1 = new JTextField();
-			txtN1.setBounds(155, 8, 86, 20);
+			txtN1.setBounds(155, 0, 86, 20);
 			contentPane.add(txtN1);
 			txtN1.setColumns(10);
 		}
 		{
 			txtN2 = new JTextField();
-			txtN2.setBounds(155, 42, 86, 20);
+			txtN2.setBounds(155, 25, 86, 20);
 			contentPane.add(txtN2);
 			txtN2.setColumns(10);
 		}
 		{
 			txtN3 = new JTextField();
-			txtN3.setBounds(155, 76, 86, 20);
+			txtN3.setBounds(155, 47, 86, 20);
 			contentPane.add(txtN3);
 			txtN3.setColumns(10);
 		}
@@ -118,8 +119,17 @@ public class V1 extends JFrame implements ActionListener {
 				scrollPane.setViewportView(txtS);
 			}
 		}
+		{
+			btnNewButton_1 = new JButton("Borrar");
+			btnNewButton_1.addActionListener(this);
+			btnNewButton_1.setBounds(17, 75, 89, 23);
+			contentPane.add(btnNewButton_1);
+		}
 	}
 	public void actionPerformed(ActionEvent e) {
+		if (e.getSource() == btnNewButton_1) {
+			do_btnNewButton_1_actionPerformed(e);
+		}
 		if (e.getSource() == btnSumarReales) {
 			do_btnSumarReales_actionPerformed(e);
 		}
@@ -164,5 +174,7 @@ public class V1 extends JFrame implements ActionListener {
 		} catch (Exception e2) {
 			MostrarError();
 		}
+	}
+	protected void do_btnNewButton_1_actionPerformed(ActionEvent e) {
 	}
 }
